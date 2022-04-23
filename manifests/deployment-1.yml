@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "shcluster-d5a3"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "shcluster-d5a3"
+  template:
+    metadata:
+      labels:
+        app: "shcluster-d5a3"
+    spec:
+      containers:
+        - name: "shcluster-d5a3"
+          image: "shadireg.azurecr.io/shcluster"
+          ports:
+          - containerPort: 80
