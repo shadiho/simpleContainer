@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "shcluster-f4ba"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "shcluster-f4ba"
+  template:
+    metadata:
+      labels:
+        app: "shcluster-f4ba"
+    spec:
+      containers:
+        - name: "shcluster-f4ba"
+          image: "shadireg.azurecr.io/shcluster"
+          ports:
+          - containerPort: 80
